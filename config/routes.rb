@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'pages#index'
    get "/purchase/:id", to: "purchases#new", as: :purchase_product
-
+   get "/cart", to: "pages#cart", as: :checkout_cart
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

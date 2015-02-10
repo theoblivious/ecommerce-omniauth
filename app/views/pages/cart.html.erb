@@ -1,0 +1,9 @@
+<h1><%="#{current_user.email} shopping cart" %></h1>
+
+<% current_user.user_products.each do |item| %>
+#######
+
+<%= item.product.title %> </br>
+#############
+<%end%>
+
