@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+before_filter :authenticate_user!
 before_action :find_product, only: [:show]
 
 

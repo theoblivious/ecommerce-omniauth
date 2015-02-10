@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'pages/index'
 
   resources :products, only: [:show]
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'pages#index'
+   get "/purchase/:id", to: "purchases#new", as: :purchase_product
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
