@@ -1,1 +1,3 @@
 <h1><%= @product.title %></h1>
+<h2>Quantity: <%=@product.quantity%></h2>
+<h3>Price: <%=number_to_currency(@product.price,:precision => 2)%></h3>
