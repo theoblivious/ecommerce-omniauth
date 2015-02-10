@@ -4,8 +4,10 @@ class PagesController < ApplicationController
   end
 
   def cart
-  	
-  
+ 
+  	@cart_sum = current_user.products.pluck(:price).inject(:+).to_f
+ 
   end
 
 end
+

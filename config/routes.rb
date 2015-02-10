@@ -4,12 +4,17 @@ Rails.application.routes.draw do
 
   resources :products, only: [:show]
 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
    root 'pages#index'
+
+   # non-RESTful routes. 
+
    get "/purchase/:id", to: "purchases#new", as: :purchase_product
+   post "/remove/:id", to: "purchases#destroy", as: :remove_product
    get "/cart", to: "pages#cart", as: :checkout_cart
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

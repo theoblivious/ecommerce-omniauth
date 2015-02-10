@@ -1,9 +1,13 @@
 <h1><%="#{current_user.email} shopping cart" %></h1>
 
 <% current_user.user_products.each do |item| %>
-#######
+
 
 <%= item.product.title %> </br>
-#############
+<%= number_to_currency(item.product.price,:precision => 2) %> </br> 
+<%= link_to "Delete", remove_product_path(:id) %>
+-----------</br>
+
 <%end%>
+
 
