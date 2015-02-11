@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-item1 = Product.create([{title: "Teddy Bear"}, {price:20}, {quantity: 20}])
-item2 = Product.create([{title: "Book"}, {price:30}, {quantity: 11}])
+item1 = Product.create([{title: "Teddy Bear", price: 20, quantity: 20}])
+item2 = Product.create([{title: "Book", price: 30, quantity: 11}])
