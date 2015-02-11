@@ -18,9 +18,12 @@ before_filter :authenticate_user!
 	end
 
 	def destroy
-		# binding.pry
-		current_user.user_products.where(id: params[:id]).destroy_all
 		
+		current_user.user_products.where(id: params[:id]).destroy_all
+		respond_to do |format|
+			format.html {redirect_to checkout_cart_path, notice: "Product has been removed"}
+			format.json {head :no_content}
+		end
 	end
 
 end
