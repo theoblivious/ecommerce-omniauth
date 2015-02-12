@@ -2,7 +2,6 @@ class PurchasesController < ApplicationController
 before_filter :authenticate_user! 
 	
 	def new
-
 		# this makes a new cart item
 		cart_item =current_user.user_products.new
 		# this selects the cart_item based on the params 
@@ -18,7 +17,6 @@ before_filter :authenticate_user!
 	end
 
 	def destroy
-		
 		current_user.user_products.where(id: params[:id]).destroy_all
 		respond_to do |format|
 			format.html {redirect_to checkout_cart_path, notice: "Product has been removed"}
