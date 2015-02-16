@@ -6,8 +6,17 @@
 
 <%end%>
 
-<h1>Total: <%= number_to_currency(@cart_sum,:precision => 2) %></h1>
 
-<a href="https://api.id.me/oauth/authorize?client_id=23d5248f57eb7673f0d746ca74178468&redirect_uri=http://kenn-ecommerce-test.dev/cart&response_type=code&scope=military">
+<% if user_signed_in? && current_user.affiliation %>
+  <h2>Total: <%= number_to_currency(@cart_sum,:precision => 2) %></h2>
+  <h2>Discount:<%= "#{@discount}%"%></h2>
+  <h1>New Total: <%= number_to_currency(@discounted_cart_sum,:precision => 2) %></h1>
+<%else%>
+  <h1>New Total: <%= number_to_currency(@cart_sum,:precision => 2) %></h1>
+<%end%>
+
+
+
+<!-- <a href="https://api.id.me/oauth/authorize?client_id=23d5248f57eb7673f0d746ca74178468&redirect_uri=http://kenn-ecommerce-test.dev/cart&response_type=code&scope=military">
   <img alt="Verify your military affiliation with ID.me" src="https://s3.amazonaws.com/idme/buttons/troop_red_rnd_40.png" />
-</a>
+</a> -->
