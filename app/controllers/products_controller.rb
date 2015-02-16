@@ -3,9 +3,7 @@ before_filter :authenticate_user!
 before_action :find_product, only: [:show]
 
 
-#TODO: May not need this? 
-def index
-end
+
 
 
 def show
