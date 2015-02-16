@@ -19,6 +19,8 @@
 	<%end%>
 </ul>
 
+<!-- nifty way to caveat if user_signed_in from devise and filter for only having current_user.affiliation -->
+
 <% if user_signed_in? %>
-  <%= "Flashy banner zomg: #{current_user.affiliation} discounts eligible" if current_user.affiliation %>
+  <%= "Flashy banner zomg: #{current_user.affiliation} discounts eligible" if current_user.affiliation %> </br>
 <% end %>

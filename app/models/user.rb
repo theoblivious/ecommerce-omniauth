@@ -9,9 +9,10 @@ class User < ActiveRecord::Base
   has_many :user_products
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid, login: auth.uid).first_or_create do |user|
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.affiliation = auth.info.affiliation if auth.info.verified
       user.password = auth.uid.reverse * 2
+      user.email = auth.extra.raw.email
     end
   end
 
@@ -23,7 +24,12 @@ class User < ActiveRecord::Base
     end
   end
 
-  def email_required?
-    false
+
+  def self.discount
+    20.to_i
   end
+
+  # def email_required?
+  #   false
+  # end
 end

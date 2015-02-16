@@ -9,3 +9,4 @@
 
 item1 = Product.create([{title: "Teddy Bear", price: 20, quantity: 20}])
 item2 = Product.create([{title: "Book", price: 30, quantity: 11}])
+item3 = Product.create([{title: "Shoes", price: 10, quantity: 10}])
