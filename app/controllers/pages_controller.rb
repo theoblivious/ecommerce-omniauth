@@ -12,3 +12,5 @@ class PagesController < ApplicationController
 
 end
 
+# TODO pull this to the model. 
+# TODO have different discounts for different affiliations. 
